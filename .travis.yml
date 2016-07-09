@@ -1,4 +1,6 @@
-ervices:
+sudo: required
+
+services:
   - docker
 
 before_install:
