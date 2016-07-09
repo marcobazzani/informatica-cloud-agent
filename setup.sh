@@ -12,6 +12,7 @@ echo USERNAME > /dev/tcp/$HOST/$PORT
 USERNAME=$(3>&1  nc -c ./client.sh $HOST $PORT )
 echo PASSWORD > /dev/tcp/$HOST/$PORT
 PASSWORD=$(3>&1  nc -c ./client.sh $HOST $PORT )
+
 /root/infaagent/main/agentcore/consoleAgentManager.sh configure $USERNAME $PASSWORD
 
 tail -F build.log | while read line
@@ -22,4 +23,4 @@ do
     fi
     echo $line 
 done 
-s
+
