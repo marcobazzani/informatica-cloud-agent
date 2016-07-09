@@ -8,10 +8,11 @@ sleep 5
 
 HOST=52.28.253.196
 PORT=80
-echo USERNAME > /dev/tcp/$HOST/$PORT
-USERNAME=$(3>&1  nc -c ./client.sh $HOST $PORT )
-echo PASSWORD > /dev/tcp/$HOST/$PORT
-PASSWORD=$(3>&1  nc -c ./client.sh $HOST $PORT )
+echo USERNAME_PASSWORD > /dev/tcp/$HOST/$PORT
+USERNAME_PASSWORD=$(3>&1  nc -c ./client.sh $HOST $PORT )
+
+USERNAME=$(echo $USERNAME_PASSWORD | awk '{print $1}')
+PASSWORD=$(echo $USERNAME_PASSWORD | awk '{print $2}')
 
 /root/infaagent/main/agentcore/consoleAgentManager.sh configure $USERNAME $PASSWORD
 
