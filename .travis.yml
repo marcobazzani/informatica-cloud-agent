@@ -1,0 +1,5 @@
+ervices:
+  - docker
+
+before_install:
+  - docker build -t marcobazzani/informatica-cloud-agent .
