@@ -1,5 +1,7 @@
 sudo: required
 
+script:
+  - "echo docker"
 services:
   - docker
 
