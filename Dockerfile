@@ -18,4 +18,5 @@ RUN chmod +x client.sh
 RUN chmod +x docker_agent_start.sh
 RUN ./setup.sh
 RUN echo "InfaAgent.MasterUrl=https://app.informaticaondemand.com/ma" > /root/infaagent/main/infaagent.ini
-CMD /root/infaagent/docker_agent_start.sh
+ENTRYPOINT [ '/root/infaagent/docker_agent_start.sh' ]
+CMD ['USERNAME', 'PASSWORD']
