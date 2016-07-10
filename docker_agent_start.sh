@@ -12,6 +12,12 @@ cd /root/infaagent
 
 sleep 1
 
-/root/infaagent/main/agentcore/consoleAgentManager.sh configure $1 $2 
+/root/infaagent/main/agentcore/consoleAgentManager.sh configure $1 $2 | grep -q fails
+
+if [[ $? == 0 ]] ;
+then
+    exit 2
+fi
+
 
 wait
