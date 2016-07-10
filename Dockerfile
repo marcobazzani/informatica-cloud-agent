@@ -10,9 +10,12 @@ WORKDIR "/root/infaagent"
 #COPY setup.sh .
 #COPY client.sh .
 #Workaround for travis
-RUN wget https://raw.githubusercontent.com/visik7/informatica-cloud-agent/visik7-travis/client.sh
-RUN wget https://raw.githubusercontent.com/visik7/informatica-cloud-agent/visik7-travis/setup.sh
-RUN wget https://raw.githubusercontent.com/visik7/informatica-cloud-agent/visik7-travis/docker_agent_start.sh
+#RUN wget https://raw.githubusercontent.com/visik7/informatica-cloud-agent/visik7-travis/client.sh
+#RUN wget https://raw.githubusercontent.com/visik7/informatica-cloud-agent/visik7-travis/setup.sh
+#RUN wget https://raw.githubusercontent.com/visik7/informatica-cloud-agent/visik7-travis/docker_agent_start.sh
+ADD setup.sh .
+ADD client.sh .
+ADD docker_agent_start.sh . 
 RUN chmod +x setup.sh
 RUN chmod +x client.sh
 RUN chmod +x docker_agent_start.sh
