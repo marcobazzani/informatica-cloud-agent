@@ -11,5 +11,5 @@ before_install:
 after_success:
   - if [ "$TRAVIS_BRANCH" == "visik7-travis" ]; then
     docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push USER/REPO;
+    docker push marcobazzani/informatica-cloud-agent;
     fi
