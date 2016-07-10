@@ -9,7 +9,7 @@ before_install:
   - docker build -t marcobazzani/informatica-cloud-agent .
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "visik7-travis" ]; then
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push marcobazzani/informatica-cloud-agent;
     fi
