@@ -14,4 +14,4 @@ sleep 1
 
 /root/infaagent/main/agentcore/consoleAgentManager.sh configure $1 $2 
 
-fg
+wait
