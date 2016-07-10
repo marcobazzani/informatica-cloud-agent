@@ -1,6 +1,4 @@
-sudo: false
-
-language: python
+sudo: required
 
 script:
   - "echo docker"
